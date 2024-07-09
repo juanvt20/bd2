@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Cuenta - Telefónica XYZ</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <img src="logo.png" alt="Logo" class="logo-image">
+                <h1>Telefónica XYZ</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="descubrenos.html">Descúbrenos</a></li>
+                    <li><a href="planes.html">Planes</a></li>
+                    <li><a href="servicios.html">Servicios</a></li>
+                    <li><a href="contacto.html">Contacto</a></li>
+                    <li><a href="micuenta.html">Mi Cuenta</a></li> 
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <section>
+            <h2>Mi Cuenta</h2>
+            <form action="procesar_cuenta.php" method="POST">
+                <label for="usuario">Usuario:</label><br>
+                <input type="text" id="usuario" name="usuario" required><br><br>
+                
+                <label for="email">Correo Electrónico:</label><br>
+                <input type="email" id="email" name="email" required><br><br>
+                
+                <input type="submit" value="Enviar">
+            </form>
+        </section>
+    </main>
+    <footer>
+        <p>Servicios sujetos a disponibilidad de cobertura y viabilidad técnica. Conoce condiciones y restricciones en <a href="contacto.html" target="_blank"> contacto</a></p>
+         
+    </footer>
+</body>
+</html>

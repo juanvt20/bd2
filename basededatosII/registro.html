@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro - Telefónica XYZ</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <img src="logo.png" alt="Logo" class="logo-image">
+                <h1>Telefónica XYZ</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="descubrenos.html">Descúbrenos</a></li>
+                    <li><a href="planes.html">Planes</a></li>
+                    <li><a href="servicios.html">Servicios</a></li>
+                    <li><a href="contacto.html">Contacto</a></li>
+                    <li><a href="micuenta.html">Mi Cuenta</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <section>
+            <h2>Registro de Plan</h2>
+            <form action="procesar_registro.php" method="POST">
+                <p>Selecciona el plan que deseas:</p>
+                <input type="radio" id="internet" name="plan" value="Internet">
+                <label for="internet">Internet</label><br>
+                
+                <input type="radio" id="internet-cable" name="plan" value="Internet+Cable">
+                <label for="internet-cable">Internet + Cable</label><br>
+
+                <input type="radio" id="internet-cable-telefono" name="plan" value="Internet+Cable+Telefono">
+                <label for="internet-cable-telefono">Internet + Cable + Teléfono Fijo</label><br><br>
+                
+                <label for="nombre">Nombre:</label><br>
+                <input type="text" id="nombre" name="nombre" required><br><br>
+                
+                <label for="email">Correo Electrónico:</label><br>
+                <input type="email" id="email" name="email" required><br><br>
+                
+                <input type="submit" value="Registrar">
+            </form>
+        </section>
+    </main>
+    <div id="footer"></div>
+    <script src="footer.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', (event) => {
+            const urlParams = new URLSearchParams(window.location.search);
+            const plan = urlParams.get('plan');
+            
+            if (plan) {
+                document.querySelector(`input[name="plan"][value="${plan.replace(' ', '+')}"]`).checked = true;
+            }
+        });
+    </script>
+</body>
+</html>
